@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Focus Overlay",
+  "version": "1.0",
+  "description": "An overlay to help users with ADHD focus on particular text.",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "activeTab", 
+    "scripting",
+    "tabs", 
+    "storage"
+  ],
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["asset-manifest.json", "static/js/.js","static/css/*.css"],
+      "matches": ["https://*/*", "http://*/*"]
+    }
+  ],
+  "host_permissions": [
+    "https://*/*",
+    "http://*/*"
+  ]
+}

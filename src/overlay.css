@@ -1,0 +1,23 @@
+/* src/Overlay.css */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1920vw;
+    height: 1080vh;
+    color: rgb(213, 45, 45);
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 9999;
+  }
+  
+  .highlight-column {
+    position: fixed;
+    top: 0;
+    width: 10vw; /* Adjust column width as needed */
+    height: 100vh;
+    background-color: rgb(109, 129, 22);
+    pointer-events: none;
+    transition: up 0s;
+  }
+  
